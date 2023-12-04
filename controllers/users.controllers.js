@@ -1,6 +1,11 @@
-const getUsers = (req, res) => {
+const db = require("../models");
+
+const getUsers = async (req, res) => {
+  const user = await db.users.findAll();
+
   return res.status(200).json({
-    message: "ini users",
+    message: "success",
+    data: user,
   });
 };
 
