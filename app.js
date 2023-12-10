@@ -2,6 +2,10 @@ const express = require("express");
 
 const app = express();
 
+// BODY PARSER
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
 const routes = require("./routes");
 
 app.use(routes);
